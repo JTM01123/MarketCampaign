@@ -61,4 +61,4 @@ with total4:
   st.metric(label = 'Total Conversions :eyes:', value = numerize(total_conversions))
 
 with total5:
-  st.metric(label = 'Approved Conversions :eyes:', value = numerize(total_Approved_Conversions))
+  st.metric(label = 'Approved Conversions :eyes:', value = numerize(total_approved_conversions))
