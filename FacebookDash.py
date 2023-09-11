@@ -41,8 +41,8 @@ FB_df1 = FB_df.query('campaign == @Campaign_filter & age == @Age_filter & gender
 total_impressions = float(FB_df1['Impressions'].sum())
 total_clicks = float(FB_df1['Clicks'].sum())
 total_spent = float(FB_df1['Spent'].sum())
-total_conversions = float(FB_df1['Total_Conversions'].sum())
-total_Approved_Conversions = float(FB_df1['Approved_Conversions'].sum())
+total_conversions = float(FB_df1['Total_Conversion'].sum())
+total_Approved_Conversions = float(FB_df1['Approved_Conversion'].sum())
 
 #Columns for the 5 metrics
 total1,total2,total3,total4,total5, = st.columns(5,gap ='large')
