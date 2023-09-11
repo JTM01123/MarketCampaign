@@ -48,17 +48,16 @@ total_approved_conversions = float(FB_df1['Approved_Conversion'].sum())
 total1,total2,total3,total4,total5, = st.columns(5,gap ='large')
 
 with total1:
-  st.header("Total Impressions :eyes:")
   st.metric(label = 'Total Impressions :eyes:', value = numerize(total_impressions))
 
 with total2:
-  st.metric(label = 'Total Clicks :eyes:', value = numerize(total_clicks)) 
+  st.metric(label = 'Total Clicks :three_button_mouse:', value = numerize(total_clicks)) 
 
 with total3:
-  st.metric(label = 'Total Spend :eyes:', value = numerize(total_spent))
+  st.metric(label = 'Total Spend :moneybag:', value = numerize(total_spent))
 
 with total4:
-  st.metric(label = 'Total Conversions :eyes:', value = numerize(total_conversions))
+  st.metric(label = 'Total Conversions :shopping_trolley:', value = numerize(total_conversions))
 
 with total5:
-  st.metric(label = 'Approved Conversions :eyes:', value = numerize(total_approved_conversions))
+  st.metric(label = 'Approved Conversions :ballot_box_with_check:', value = numerize(total_approved_conversions))
