@@ -34,4 +34,30 @@ with st.sidebar:
                                    options = FB_df['gender'].unique(),
                                    default = FB_df['gender'].unique())
 
+#KPIs- Connecting columns to our filters
+FB_df1 = FB_df.query('campaign == @Campaign_filter & age == @Age_filter & gender == @Gender_filter')
 
+#Metrics: Sum of Impressions, total clicks, total money spent of campaign, total number of conversions, total number of APPROVED conversions
+total_impressions = float(FB_df1['Impressions'].sum())
+total_clicks = float(FB_df1['Clicks'].sum())
+total_spent = float(FB_df1['Spent'].sum())
+total_conversions = float(FB_df1['Total_Conversions'].sum())
+total_Approved_Conversions = float(FB_df1['Approved_Conversions'].sum())
+
+#Columns for the 5 metrics
+total1,total2,total3,total4,total5, = st.columns(5,gap ='large')
+
+with total1:
+  st.metric(label = 'Total Impressions' :eyes:, value = numerize(total_impressions))
+
+with total2:
+  st.metric(label = 'Total Clicks' :eyes:, value = numerize(total_clicks)) 
+
+with total3:
+  st.metric(label = 'Total Spend' :eyes:, value = numerize(total_spent))
+
+with total4:
+  st.metric(label = 'Total Conversions' :eyes:, value = numerize(total_conversions))
+
+with total5:
+  st.metric(label = 'Approved Conversions' :eyes:, value = numerize(total_Approved_Conversions))
