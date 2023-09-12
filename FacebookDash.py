@@ -65,8 +65,8 @@ with total5:
 Q1,Q2 = st.columns(2)
 
 with Q1:
-    FB_df2 = FB_df1.groupby( by = ['campaign']).sum()[['Impressions', 'Clicks']].rest_index()
-    FB_df2['CTR'] = round(FB_df2['Clicks']/FB_df2['Impressions'] *100, 3)
+    FB_df2 = FB_df1.groupby(by = ['campaign']).sum()[['Impressions','Clicks']].reset_index()
+    FB_df2['CTR'] =round(FB_df2['Clicks']/FB_df2['Impressions'] *100,3)
     fig_CTR_by_campaign = px.bar(FB_df2,
                             x='campaign',
                             y='CTR',
@@ -90,4 +90,3 @@ with Q2:
                                         xaxis =(dict(showgrid = False)),
                                         yaxis =(dict(showgrid = False)),)
     st.plotly_chart(fig_impressions_per_day,use_container_width=True)
-
