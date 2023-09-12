@@ -71,11 +71,11 @@ with Q1:
                             x='campaign',
                             y='CTR',
                             title='<b>Click Through Rate</b>')
-    fig_CTR_by_campaign.update_layout(title = {'x' : 0.5},
+  fig_CTR_by_campaign.update_layout(title = {'x' : 0.5},
                                     plot_bgcolor = "rgba(0,0,0,0)",
                                     xaxis =(dict(showgrid = False)),
                                     yaxis =(dict(showgrid = False)))
-    st.plotly_chart(fig_CTR_by_campaign,use_container_width=True)
+  st.plotly_chart(fig_CTR_by_campaign,use_container_width=True)
                         
                                     
                                   
