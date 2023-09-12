@@ -63,30 +63,3 @@ with total5:
   st.metric(label = 'Approved Conversions :ballot_box_with_check:', value = numerize(total_approved_conversions))
 
 Q1,Q2 = st.columns(2)
-
-with Q1:
-    FB_df2 = FB_df1.groupby(by = ['campaign']).sum()[['Impressions','Clicks']].reset_index()
-    FB_df2['CTR'] =round(FB_df2['Clicks']/FB_df2['Impressions'] *100,3)
-    fig_CTR_by_campaign = px.bar(FB_df2,
-                            x='campaign',
-                            y='CTR',
-                            title='<b>Click Through Rate</b>')
-    fig_CTR_by_campaign.update_layout(title = {'x' : 0.5},
-                                    plot_bgcolor = "rgba(0,0,0,0)",
-                                    xaxis =(dict(showgrid = False)),
-                                    yaxis =(dict(showgrid = False)))
-    st.plotly_chart(fig_CTR_by_campaign,use_container_width=True)
-  
-with Q2:
-    fig_impressions_per_day = px.line(FB_df1,x='date',
-                                    y=['Impressions'],
-                                    color='campaign',
-                                    title='<b>Daily Impressions By Campaign</b>')
-    fig_impressions_per_day.update_xaxes(rangeslider_visible=True)
-    fig_impressions_per_day.update_layout(xaxis_range=['2021-01-01','2021-01-31'],
-                                        showlegend = False,
-                                        title = {'x' : 0.5},
-                                         plot_bgcolor = "rgba(0,0,0,0)",
-                                        xaxis =(dict(showgrid = False)),
-                                        yaxis =(dict(showgrid = False)),)
-    st.plotly_chart(fig_impressions_per_day,use_container_width=True)
