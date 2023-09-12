@@ -76,9 +76,18 @@ with Q1:
                                     xaxis =(dict(showgrid = False)),
                                     yaxis =(dict(showgrid = False)))
   st.plotly_chart(fig_CTR_by_campaign,use_container_width=True)
-                        
-                                    
-                                  
-with Q2:
   
+with Q2:
+  fig_impressions_per_day = px.line(FB_df1,x='date',
+                                    y=['Impressions'],
+                                    color='campaign',
+                                    title='<b>Daily Impressions By Campaign</b>')
+    fig_impressions_per_day.update_xaxes(rangeslider_visible=True)
+    fig_impressions_per_day.update_layout(xaxis_range=['2021-01-01','2021-01-31'],
+                                        showlegend = False,
+                                        title = {'x' : 0.5},
+                                         plot_bgcolor = "rgba(0,0,0,0)",
+                                        xaxis =(dict(showgrid = False)),
+                                        yaxis =(dict(showgrid = False)),)
+    st.plotly_chart(fig_impressions_per_day,use_container_width=True)
 
