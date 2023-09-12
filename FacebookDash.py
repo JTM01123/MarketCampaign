@@ -82,9 +82,3 @@ with Q1:
 with Q2:
   
 
-Q3,Q4 = st.columns(2)
-
-with Q3:
-
-with Q4:
-
